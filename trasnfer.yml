@@ -1,0 +1,10 @@
+---
+- name: Transfera tot continutul repo-ului pe router
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Copiaza absolut toate fisierele din GitHub
+      copy:
+        src: "./"
+        dest: "/tmp/fisierele_mele/"
