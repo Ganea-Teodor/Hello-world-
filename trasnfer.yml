@@ -1,11 +1,11 @@
 ---
-- name: Descarca repo-ul direct pe router fara Python
+- name: Descarca fisierele pe router
   hosts: all
   gather_facts: no
 
   tasks:
-    - name: Creeaza folderul pe router
-      raw: mkdir -p /tmp/fisierele_mele
+    - name: Creeaza folderul dorit
+      raw: mkdir -p /root/teste
 
-    - name: Afiseaza un mesaj ca s-a conectat cu succes
-      raw: echo "Conexiune reusita pe RUT906!" > /tmp/fisierele_mele/status.txt
+    - name: Descarca fisierul direct in folderul nou
+      raw: wget -O /root/teste/README.md https://raw.githubusercontent.com/Ganea-Teodor/Hello-world-/main/README.md
